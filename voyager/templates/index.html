@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>index of svb project</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(38, 204, 255);}
+    h1 {
+      text-shadow: 3px 2px rgba(255, 255, 255, 0.603);
+      text-align: center;
+      color: crimson;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-variant: small-caps;
+      margin: auto;
+      }
+    label{
+      text-align: center;
+      font-style: italic;
+    }
+    a {
+      text-align: center;
+      color: rgb(17, 57, 255);
+    }
+    a:link {
+      text-decoration: none;
+    }
+    a:hover {
+      color: whitesmoke;
+      text-decoration: underline;
+    }
+    #adding {
+      text-align: center;
+      border: 7px solid rgb(255, 255, 255);
+      border-style: dotted;
+      width: 400px;
+      margin: auto;
+    }
+
+    ol {
+      text-align: center;
+    }
+
+    ul {
+      border: 7px solid rgb(255, 255, 255);
+      padding: 2px;
+      border-style: dotted;
+      width: 400px;
+      margin: auto;
+    }
+
+  </style>
+  <body>
+    <h1>Operations</h1>
+    <ol>
+      <ul id="adding">
+        <form action="/sailors/add" method=POST>
+        <label>sailor name</label>
+        <input name="s_name"/><br/>
+        <label>sailor age</label>
+        <input name="s_age"/><br/>
+        <label>sailor experience</label>
+        <input name="s_exp"/><br/>
+        <input type=submit value="add sailor"/>
+        </form>
+     
+        <form action="/boats/add" method=POST>
+        <label>boat name</label>
+        <input name="b_name"/><br/>
+        <label>boat color</label>
+        <input name="b_color"/><br/>
+        <input type=submit value="add boat"/>
+        </form>
+      
+        <form action="/voyages/add" method=POST>
+        <label>sailor id</label> 
+        <input name="voyage_sid"/><br/>
+        <label>boat id</label>
+        <input name="voyage_bid"/><br/>
+        <label>date of voyage(yyyy-mm-dd)</label>
+        <input name="voyage_date"/><br/>
+        <input type=submit value="add voyage"/>
+        </form> 
+      </ul>
+    </ol>
+    <h1>Views</h1>
+    <ol>
+        <a href="/sailors">Sailors Table</a><br/>
+        <a href="/boats">Boats Table</a><br/>
+        <a href="/voyages">Voyages Table</a><br/>
+        <a href="/boats/by-popularity">boats by popularity</a>
+        <br/><br/>
+      <ul>
+        <form action="/sailors/who-sailed" method=POST>
+          <label>boat name</label>
+          <input name="boat-name"/>
+          <input type=submit value="sailors who sailed boat"/>
+        </form>
+
+        <form action="/boats/sailed-by" method=POST>
+          <label>sailor name</label>
+          <input name="sailor-name"/>
+          <input type=submit value="boats sailed by"/>
+        </form>
+ 
+        <form action="/sailors/who-sailed-on-date" method=POST>
+          <label>date</label>
+          <input name="date"/>
+          <input type=submit value="sailors who sailed on date"/>
+        </form>
+
+        <form action="/sailors/who-sailed-on-boat-of-color" method=POST>
+          <label>color</label>
+          <input name="color"/>
+          <input type=submit value="sailors who sailed boat"/>
+        </form>
+      </ul>
+    </ol>
+  </body>
+</html>
